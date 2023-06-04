@@ -85,12 +85,6 @@ win.mainloop()
 
 
 
-# In[36]:
-
-
-print(data)
-
-
 # In[ ]:
 
 
