@@ -1,4 +1,4 @@
-Weather app update with errors handling and removed bugs
+#this update has functioning by enter button and also error handling and removed bugs
 from tkinter import *
 from tkinter import ttk
 import requests
@@ -19,6 +19,9 @@ def data_get():
         t_label1.config(text="")
         p_label1.config(text="")
         city_name.set("Check & re-enter check the city name")  # Reset the city name
+
+def press_enter(event):
+    data_get()
 
 win = Tk()
 win.title("Pranjil's Weather app")
@@ -72,5 +75,7 @@ p_label1.place(x=220, y=330, height=20, width=200)
 done_button = Button(win, text="Get Weather", font=("Time New Roman", 20, "bold"), command=data_get)
 done_button.place(x=175, y=180, height=30, width=150)
 
-win.mainloop()
+# for making the function run by the enter button
+win.bind("<Return>", press_enter)
 
+win.mainloop()
